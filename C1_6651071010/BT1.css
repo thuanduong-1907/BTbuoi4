@@ -1,0 +1,86 @@
+/* ================= BÀI 1: DƯƠNG COFFEE ================= */
+/* Selector universal (*) */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Tag selector */
+body { font-family: "Segoe UI", Arial, sans-serif; color: #3e2b23; background: #fbf6ef; line-height: 1.6; }
+
+/* Hero: background-size + background-position */
+.hero {
+    min-height: 360px;
+    background: linear-gradient(135deg, #4b2e22cc, #9b6b4ecc), url("../images/coffee.svg") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center;
+}
+.hero-overlay { width: min(1180px, 92%); margin: auto; color: white; }
+.brand { display: flex; align-items: center; gap: 22px; }
+.brand img { width: 115px; height: 115px; border-radius: 50%; border: 5px solid #fff; }
+.brand h1 { font-size: clamp(42px, 7vw, 72px); letter-spacing: 1px; }
+.brand p { font-size: 19px; }
+.hero-note { margin-top: 28px; max-width: 650px; font-size: 18px; }
+
+/* Child selector (>) */
+.main-nav > ul { list-style: none; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; background: #2e1d17; padding: 12px; }
+.main-nav > ul > li > a { display: block; color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 20px; transition: .25s; }
+/* Pseudo-class :hover */
+.main-nav a:hover { background: #d69a64; transform: translateY(-2px); }
+
+/* Layout */
+.layout { width: min(1200px, 92%); margin: 45px auto; display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+.menu-section { margin-bottom: 42px; }
+/* Pseudo-element ::before */
+.menu-section h2::before { content: "☕ "; }
+.menu-section h2 {
+    font-size: 30px; margin-bottom: 18px; padding: 12px 18px;
+    background: linear-gradient(#fff7ed, #f3dfcb);
+    border-radius: 14px;
+    /* background-origin + background-clip */
+    background-origin: border-box; background-clip: padding-box;
+    border-left: 7px solid #b87442;
+}
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+/* Class selector */
+.food-card { background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px #5a382218; transition: transform .25s, box-shadow .25s; border: 1px solid #ead9ca; }
+/* Pseudo-class :hover */
+.food-card:hover { transform: translateY(-7px); box-shadow: 0 16px 32px #5a382230; }
+.food-card > img { width: 100%; height: 180px; object-fit: cover; border-radius: 18px 18px 0 0; }
+.card-body { padding: 18px; }
+.card-body h3 { font-size: 21px; margin-bottom: 7px; }
+.card-body p { color: #705d54; min-height: 58px; }
+/* Adjacent sibling (+): giá nằm cạnh nút */
+.price + button { margin-top: 10px; }
+.price { display: inline-block; color: #a95724; font-size: 20px; font-weight: 800; margin-top: 12px; }
+button { border: 0; background: #a95724; color: #fff; padding: 10px 17px; border-radius: 10px; cursor: pointer; }
+button:hover { background: #6e351a; }
+
+/* ID selector */
+#khuyen-mai {
+    padding: 25px; background: #fffaf3; border-radius: 20px;
+    border: 12px solid transparent;
+    border-image: linear-gradient(45deg, #b87442, #f1c27d) 1;
+    box-shadow: 0 8px 25px #5a382218; height: fit-content; position: sticky; top: 20px;
+}
+#khuyen-mai h2 { color: #8c4b25; }
+.promo-big { font-size: 38px; font-weight: 900; color: #c25b2a; margin: 10px 0; }
+.promo li { margin: 8px 0 8px 22px; }
+.promo-link { color: #8c4b25; font-weight: 700; }
+
+/* Group selector (,) */
+h1, h2, h3 { line-height: 1.2; }
+
+/* Multiple backgrounds for footer */
+footer {
+    background: url("../images/coffee.svg") right bottom/260px auto no-repeat, linear-gradient(120deg, #2e1d17, #5a3729);
+    color: #fff; padding: 45px max(4%, calc((100% - 1200px)/2)); display: grid; grid-template-columns: repeat(3,1fr); gap: 25px;
+    margin-top: 60px;
+}
+footer p { color: #eadfd8; margin-top: 7px; }
+
+@media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; }
+    #khuyen-mai { position: static; }
+    footer { grid-template-columns: 1fr; }
+    .brand { align-items: flex-start; }
+}

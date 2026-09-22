@@ -1,0 +1,91 @@
+/* ================= BÀI 2: PORTFOLIO ================= */
+/* Selector + reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Segoe UI", Arial, sans-serif; color: #172033; background: #f7f9fc; line-height: 1.7; }
+a { color: inherit; }
+
+/* HEADER — User Interface: sticky */
+.site-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 17px max(5%, calc((100% - 1180px)/2)); background: #ffffffee; backdrop-filter: blur(12px); border-bottom: 1px solid #dfe5ef; }
+.logo { font-size: 28px; font-weight: 900; text-decoration: none; letter-spacing: -1px; }
+.logo span { color: #6c63ff; }
+.site-header nav ul { display: flex; list-style: none; gap: 7px; }
+.site-header nav a { text-decoration: none; padding: 8px 14px; border-radius: 9px; transition: .25s; }
+.site-header nav a:hover { background: #eef0ff; color: #554cf0; }
+
+/* HERO — Border & Background + transform/transition */
+.hero { min-height: calc(100vh - 75px); width: min(1180px, 90%); margin: auto; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 60px; padding: 80px 0; }
+.eyebrow { color: #6c63ff; font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+.hero h1 { font-size: clamp(45px, 6vw, 76px); line-height: 1.05; margin: 18px 0; letter-spacing: -2px; }
+.hero h1 span { color: #6c63ff; }
+.lead { max-width: 650px; font-size: 19px; color: #5d687b; }
+.portrait { width: min(430px, 100%); justify-self: end; border-radius: 32px; box-shadow: 0 25px 70px #35405224; transform: rotate(2deg); transition: .4s; }
+.portrait:hover { transform: rotate(0) scale(1.02); }
+.cta { display: flex; gap: 13px; margin-top: 30px; }
+.btn { text-decoration: none; padding: 13px 21px; border-radius: 12px; font-weight: 700; transition: transform .2s, box-shadow .2s, background .2s; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px #35405220; }
+.primary { color: white; background: #6c63ff; }
+.ghost { border: 1px solid #ccd3e0; background: white; }
+
+/* Group selector */
+h1, h2, h3 { color: #172033; line-height: 1.2; }
+.section { width: min(1180px, 90%); margin: 0 auto; padding: 95px 0; }
+.section h2 { font-size: clamp(32px, 4vw, 48px); margin: 10px 0 35px; }
+.about { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; border-top: 1px solid #dfe5ef; }
+.about-copy { font-size: 18px; color: #566174; }
+.about-copy p + p { margin-top: 20px; } /* Adjacent sibling selector (+) */
+.about-copy a { color: #5a52ed; font-weight: 700; }
+.highlight { background: #eeecff; padding: 2px 6px; border-radius: 5px; }
+
+/* Skills — transform */
+.skill-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill-grid span { padding: 10px 17px; border: 1px solid #dfe5ef; background: white; border-radius: 999px; box-shadow: 0 4px 12px #3540520d; transition: transform .2s, background .2s; }
+.skill-grid span:hover { transform: scale(1.08); background: #f0efff; }
+
+/* Projects — cards, shadow, transition */
+.project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.project-card { background: white; border: 1px solid #e2e7f0; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px #35405210; transition: transform .3s, box-shadow .3s; }
+.project-card:hover { transform: translateY(-9px); box-shadow: 0 22px 45px #35405220; }
+.project-card img { width: 100%; height: 200px; object-fit: cover; }
+.project-card div { padding: 22px; }
+.project-card small { color: #6c63ff; font-weight: 800; letter-spacing: 1px; }
+.project-card h3 { margin: 8px 0; font-size: 23px; }
+.project-card p { color: #687386; min-height: 95px; }
+.project-card a { color: #5a52ed; text-decoration: none; font-weight: 800; }
+
+/* Timeline */
+.timeline-list { display: grid; gap: 18px; }
+.timeline-list article { display: grid; grid-template-columns: 70px 1fr; gap: 22px; align-items: start; padding: 24px; background: white; border-radius: 18px; border: 1px solid #e2e7f0; }
+.timeline-list article > b { width: 55px; height: 55px; display: grid; place-items: center; border-radius: 50%; background: #eeecff; color: #5a52ed; }
+.timeline-list small { color: #6c63ff; font-weight: 800; }
+
+/* Multiple columns */
+.columns { column-count: 2; column-gap: 45px; color: #596477; font-size: 17px; }
+.columns p { break-inside: avoid; }
+
+/* Posts + Aside */
+.posts { display: grid; grid-template-columns: 1fr 280px; gap: 55px; border-top: 1px solid #dfe5ef; }
+.posts aside { background: #172033; color: white; padding: 25px; border-radius: 18px; height: fit-content; }
+.posts aside h3 { color: white; margin-bottom: 10px; }
+.posts aside a { display: block; padding: 10px 0; color: #dce2ef; text-decoration: none; border-bottom: 1px solid #394458; }
+.posts aside a:hover { color: white; }
+
+/* Footer — multiple backgrounds */
+footer { color: white; background: url("../images/project-web.svg") right center/260px auto no-repeat, linear-gradient(125deg,#111827,#242b45); padding: 75px max(5%, calc((100% - 1180px)/2)); display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+footer h2 { color: white; font-size: 40px; margin: 10px 0; }
+footer .social { display: flex; gap: 14px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+footer .social a { text-decoration: none; border: 1px solid #566174; padding: 8px 13px; border-radius: 9px; transition: .2s; }
+footer .social a:hover { transform: translateY(-2px); background: #313a52; }
+footer .social .top { border-color: #6c63ff; }
+.copyright { grid-column: 1 / -1; color: #aeb8ca; margin-top: 25px; border-top: 1px solid #394458; padding-top: 20px; }
+
+@media (max-width: 850px) {
+    .site-header { flex-direction: column; gap: 10px; }
+    .site-header nav ul { flex-wrap: wrap; justify-content: center; }
+    .hero, .about, .posts { grid-template-columns: 1fr; }
+    .portrait { justify-self: center; max-width: 420px; }
+    .project-grid { grid-template-columns: 1fr; }
+    .columns { column-count: 1; }
+    footer { grid-template-columns: 1fr; }
+    footer .social { justify-content: flex-start; }
+}

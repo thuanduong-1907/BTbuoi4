@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8e8d5"/><stop offset="1" stop-color="#d89b6d"/></linearGradient></defs>
+<rect width="900" height="600" rx="36" fill="url(#g)"/>
+<circle cx="760" cy="110" r="80" fill="#fff7ed" opacity=".65"/>
+<text x="450" y="260" text-anchor="middle" font-family="Arial" font-size="110">🥖</text>
+<text x="450" y="390" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#4b2e22">Bánh mì bơ tỏi</text>
+<text x="450" y="440" text-anchor="middle" font-family="Arial" font-size="24" fill="#6b5146">Giòn thơm, dùng kèm sốt nhà làm</text>
+</svg>
